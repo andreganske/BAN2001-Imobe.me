@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+	
+	    <script type="text/javascript">
+        $(document).on("pageinit", "#page1", function(event){
+            $.getJSON("rest/events", function(events) {
+                // console.log("returned are " + events);
+                var listOfEvents = $("#listOfItems");
+                listOfEvents.empty();
+                $.each(events, function(index, event) {
+                    // console.log(event.name);
+                    listOfEvents.append("<li><a href='#'>" + event.name + "</a>");
+                });
+                listOfEvents.listview("refresh");
+            });
+        });
+    </script>
+    
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div data-role="page" id="page01">
+		<div data-role="header">
+			<h1>Imobe.me</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="listview-1" data-inset="true">
+				<li><a href="item1.html">Item 1</a></li>
+				<li><a href="item2.html">Item 2</a></li>
+				<li><a href="item3.html">Item 3</a></li>
+			</ul>
+			<p>Page content goes here.</p>
+		</div>
+		<div data-role="footer">
+			<h4></h4>
+		</div>
+	</div>
+</body>
+</html>
