@@ -23,17 +23,13 @@
    <persistence-unit name="primary">
       <!-- If you are running in a production environment, add a managed 
          data source, this example data source is just for development and testing! -->
-      <!-- The datasource is deployed as WEB-INF/Imobe.me-ds.xml, you
-         can find it in the source at src/main/webapp/WEB-INF/Imobe.me-ds.xml -->
-      <jta-data-source>java:jboss/datasources/Imobe.meDS</jta-data-source>
+      <!-- The datasource is deployed as WEB-INF/Imobeme-ds.xml, you
+         can find it in the source at src/main/webapp/WEB-INF/Imobeme-ds.xml -->
+      <jta-data-source>java:jboss/datasources/ImobemeDS</jta-data-source>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="create-drop" />
          <property name="hibernate.show_sql" value="false" />
-         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-         <property name="hibernate.connection.url" value="localhost:3306"/>
-         <property name="hibernate.connection.username" value="root"/>
-         <property name="hibernate.connection.password" value="root"/>
       </properties>
    </persistence-unit>
 </persistence>
